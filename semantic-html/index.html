@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Help Desk — Мои обращения</title>
+</head>
+<body>
+<a href="#main-content">Перейти к основному содержимому</a>
+
+<header>
+    <p><strong>Help Desk</strong></p>
+    <nav aria-label="Основная навигация">
+        <ul>
+            <li><a href="index.html" aria-current="page">Мои обращения</a></li>
+            <li><a href="create-ticket.html">Создать обращение</a></li>
+            <li><a href="#help-heading">Справка</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ПУНКТ 1: Breadcrumb-навигация с собственным доступным именем -->
+<nav aria-label="Хлебные крошки">
+    <ol>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="index.html" aria-current="page">Мои обращения</a></li>
+    </ol>
+</nav>
+
+<main id="main-content">
+    <h1>Мои обращения</h1>
+
+    <section aria-labelledby="open-tickets-heading">
+        <h2 id="open-tickets-heading">Открытые обращения</h2>
+
+        <article>
+            <h3>Не открывается личный кабинет</h3>
+            <p><strong>Статус:</strong> В работе</p>
+            <p>После входа отображается пустая страница.</p>
+            <a href="ticket-101.html">Открыть обращение №101</a>
+        </article>
+
+        <article>
+            <h3>Ошибка при загрузке файла</h3>
+            <p><strong>Статус:</strong> Новое</p>
+            <p>При загрузке PDF появляется сообщение «Ошибка 500».</p>
+            <a href="ticket-102.html">Открыть обращение №102</a>
+        </article>
+
+        <article>
+            <h3>Не приходит письмо для сброса пароля</h3>
+            <p><strong>Статус:</strong> Ожидает ответа</p>
+            <p>Письмо не приходит на резервную почту более 30 минут.</p>
+            <a href="ticket-103.html">Открыть обращение №103</a>
+        </article>
+    </section>
+
+    <!-- ПУНКТ 2: Таблица истории статусов -->
+    <section aria-labelledby="history-heading">
+        <h2 id="history-heading">История статусов</h2>
+
+        <table>
+            <caption>История изменений статусов обращений за последние 30 дней</caption>
+
+            <thead>
+            <tr>
+                <th scope="col">№ обращения</th>
+                <th scope="col">Тема</th>
+                <th scope="col">Статус</th>
+                <th scope="col">Дата изменения</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <th scope="row">101</th>
+                <td>Не открывается личный кабинет</td>
+                <td>Новое</td>
+                <td><time datetime="2026-09-20">20 сентября 2026</time></td>
+            </tr>
+            <tr>
+                <th scope="row">101</th>
+                <td>Не открывается личный кабинет</td>
+                <td>В работе</td>
+                <td><time datetime="2026-09-22">22 сентября 2026</time></td>
+            </tr>
+            <tr>
+                <th scope="row">102</th>
+                <td>Ошибка при загрузке файла</td>
+                <td>Новое</td>
+                <td><time datetime="2026-09-25">25 сентября 2026</time></td>
+            </tr>
+            <tr>
+                <th scope="row">103</th>
+                <td>Не приходит письмо для сброса пароля</td>
+                <td>Ожидает ответа</td>
+                <td><time datetime="2026-09-27">27 сентября 2026</time></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section aria-labelledby="help-heading">
+        <h2 id="help-heading">Справка</h2>
+        <p>Перед созданием нового обращения проверьте, нет ли похожего в списке.</p>
+        <figure>
+            <img src="assets/images/help-desk.svg"
+                 alt="Схема жизненного цикла обращения: новое, в работе, решено">
+            <figcaption>Жизненный цикл обращения Help Desk</figcaption>
+        </figure>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Help Desk. Учебный проект.</p>
+</footer>
+</body>
+</html>
