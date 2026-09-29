@@ -19,7 +19,7 @@
     </nav>
 </header>
 
-<!-- ПУНКТ 1: Breadcrumb -->
+<!-- Breadcrumb (продвинутый уровень) -->
 <nav aria-label="Хлебные крошки">
     <ol>
         <li><a href="index.html">Главная</a></li>
@@ -65,7 +65,38 @@
             <label><input type="radio" name="priority" value="high"> Высокий</label>
         </fieldset>
 
-        <!-- ПУНКТ 3: Подсказка через aria-describedby, видимый текст -->
+        <!-- ЗАДАНИЕ 2: Группа «Предпочтительный способ связи» -->
+        <fieldset>
+            <legend>Предпочтительный способ связи</legend>
+
+            <label>
+                <input type="radio" name="contactMethod" value="email" checked>
+                Email
+            </label>
+
+            <label>
+                <input type="radio" name="contactMethod" value="phone">
+                Телефон
+            </label>
+
+            <label>
+                <input type="radio" name="contactMethod" value="messenger">
+                Мессенджер
+            </label>
+        </fieldset>
+
+        <!-- Поле «Телефон» показывается всегда, но свяжем его с подсказкой -->
+        <div>
+            <label for="phone">Телефон для связи</label>
+            <input id="phone" name="phone"
+                   type="tel" autocomplete="tel"
+                   aria-describedby="phone-hint">
+            <p id="phone-hint">
+                Укажите в формате +7 (999) 123-45-67, если выбрали связь по телефону.
+            </p>
+        </div>
+
+        <!-- Подсказка к описанию через aria-describedby -->
         <div>
             <label for="description">Описание проблемы</label>
             <p id="description-hint">
