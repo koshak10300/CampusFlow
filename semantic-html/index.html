@@ -1,118 +1,156 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Help Desk — Мои обращения</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CampusFlow — Каталог мероприятий</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<a href="#main-content">Перейти к основному содержимому</a>
 
-<header>
-    <p><strong>Help Desk</strong></p>
+<header class="site-header">
+  <div class="container header-inner">
+    <p class="logo">CampusFlow</p>
     <nav aria-label="Основная навигация">
-        <ul>
-            <li><a href="index.html" aria-current="page">Мои обращения</a></li>
-            <li><a href="create-ticket.html">Создать обращение</a></li>
-            <li><a href="#help-heading">Справка</a></li>
-        </ul>
+      <ul class="nav-list">
+        <li><a href="#" class="active">Каталог</a></li>
+        <li><a href="#">Мои события</a></li>
+        <li><a href="#">Профиль</a></li>
+      </ul>
     </nav>
+    <div class="search-bar">
+      <input type="search" placeholder="Поиск" aria-label="Глобальный поиск">
+    </div>
+    <div class="avatar">AV</div>
+  </div>
 </header>
 
-<!-- ПУНКТ 1: Breadcrumb-навигация с собственным доступным именем -->
-<nav aria-label="Хлебные крошки">
-    <ol>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="index.html" aria-current="page">Мои обращения</a></li>
-    </ol>
-</nav>
+<main class="container">
+  <h1>Учебные мероприятия</h1>
+  <p class="subtitle">Найдите лекцию, мастер-класс или встречу по интересам.</p>
 
-<main id="main-content">
-    <h1>Мои обращения</h1>
+  <div class="toolbar">
+    <input type="search" class="main-search" placeholder="Поиск по названию или теме...">
+    <select class="sort-select">
+      <option>Сначала новые</option>
+    </select>
+    <button class="btn-reset">Сбросить</button>
+  </div>
 
-    <section aria-labelledby="open-tickets-heading">
-        <h2 id="open-tickets-heading">Открытые обращения</h2>
+  <div class="filters-row">
+    <span class="filters-label">Фильтры</span>
+    <button class="chip active">Все</button>
+    <button class="chip">Frontend</button>
+    <button class="chip">Backend</button>
+    <button class="chip">UX/UI</button>
+    <button class="chip">Карьера</button>
+    <span class="events-count">24 события</span>
+  </div>
 
-        <article>
-            <h3>Не открывается личный кабинет</h3>
-            <p><strong>Статус:</strong> В работе</p>
-            <p>После входа отображается пустая страница.</p>
-            <a href="ticket-101.html">Открыть обращение №101</a>
-        </article>
+  <div class="layout">
 
-        <article>
-            <h3>Ошибка при загрузке файла</h3>
-            <p><strong>Статус:</strong> Новое</p>
-            <p>При загрузке PDF появляется сообщение «Ошибка 500».</p>
-            <a href="ticket-102.html">Открыть обращение №102</a>
-        </article>
+    <div class="cards-grid">
+      <article class="card">
+        <div class="card-header">
+          <span class="card-cat">Frontend</span>
+          <button class="favorite">♡</button>
+        </div>
+        <h3 class="card-title">Семантический HTML без лишних div для современных веб-приложений и сайтов</h3>
+        <p class="card-meta">18 сен · 16:00 · ауд. 304</p>
+        <div class="card-footer">
+          <span class="seats">18 мест</span>
+        </div>
+      </article>
 
-        <article>
-            <h3>Не приходит письмо для сброса пароля</h3>
-            <p><strong>Статус:</strong> Ожидает ответа</p>
-            <p>Письмо не приходит на резервную почту более 30 минут.</p>
-            <a href="ticket-103.html">Открыть обращение №103</a>
-        </article>
-    </section>
+      <article class="card">
+        <div class="card-header">
+          <span class="card-cat">Инструменты</span>
+          <button class="favorite active">♥</button>
+        </div>
+        <h3 class="card-title">Git без страха</h3>
+        <p class="card-meta">19 сен · 14:30 · https://online.campusflow.ru/events/git-masterclass-2026</p>
+        <div class="card-footer">
+          <span class="seats">8 мест</span>
+        </div>
+      </article>
 
-    <!-- ПУНКТ 2: Таблица истории статусов -->
-    <section aria-labelledby="history-heading">
-        <h2 id="history-heading">История статусов</h2>
+      <article class="card">
+        <div class="card-header">
+          <span class="card-cat">UX/UI</span>
+          <button class="favorite">♡</button>
+        </div>
+        <h3 class="card-title">UX-разбор интерфейсов</h3>
+        <p class="card-meta">21 сен · 17:00 · коворкинг</p>
+        <div class="card-footer">
+          <span class="seats">5 мест</span>
+        </div>
+      </article>
 
-        <table>
-            <caption>История изменений статусов обращений за последние 30 дней</caption>
+      <article class="card">
+        <div class="card-header">
+          <span class="card-cat">Backend</span>
+          <button class="favorite">♡</button>
+        </div>
+        <h3 class="card-title">REST API на практике</h3>
+        <p class="card-meta">23 сен · 15:00 · ауд. 211</p>
+        <div class="card-footer">
+          <span class="seats">14 мест</span>
+        </div>
+      </article>
 
-            <thead>
-            <tr>
-                <th scope="col">№ обращения</th>
-                <th scope="col">Тема</th>
-                <th scope="col">Статус</th>
-                <th scope="col">Дата изменения</th>
-            </tr>
-            </thead>
+      <article class="card">
+        <div class="card-header">
+          <span class="card-cat">Карьера</span>
+          <button class="favorite">♡</button>
+        </div>
+        <h3 class="card-title">Портфолио разработчика</h3>
+        <p class="card-meta">25 сен · 18:00 · online</p>
+        <div class="card-footer">
+          <span class="seats">32 места</span>
+        </div>
+      </article>
 
-            <tbody>
-            <tr>
-                <th scope="row">101</th>
-                <td>Не открывается личный кабинет</td>
-                <td>Новое</td>
-                <td><time datetime="2026-09-20">20 сентября 2026</time></td>
-            </tr>
-            <tr>
-                <th scope="row">101</th>
-                <td>Не открывается личный кабинет</td>
-                <td>В работе</td>
-                <td><time datetime="2026-09-22">22 сентября 2026</time></td>
-            </tr>
-            <tr>
-                <th scope="row">102</th>
-                <td>Ошибка при загрузке файла</td>
-                <td>Новое</td>
-                <td><time datetime="2026-09-25">25 сентября 2026</time></td>
-            </tr>
-            <tr>
-                <th scope="row">103</th>
-                <td>Не приходит письмо для сброса пароля</td>
-                <td>Ожидает ответа</td>
-                <td><time datetime="2026-09-27">27 сентября 2026</time></td>
-            </tr>
-            </tbody>
-        </table>
-    </section>
+      <article class="card">
+        <div class="card-header">
+          <span class="card-cat">Frontend</span>
+          <button class="favorite active">♥</button>
+        </div>
+        <h3 class="card-title">Доступность в вебе</h3>
+        <p class="card-meta">27 сен · 13:00 · ауд. 118</p>
+        <div class="card-footer">
+          <span class="seats">10 мест</span>
+        </div>
+      </article>
+    </div>
 
-    <section aria-labelledby="help-heading">
-        <h2 id="help-heading">Справка</h2>
-        <p>Перед созданием нового обращения проверьте, нет ли похожего в списке.</p>
-        <figure>
-            <img src="assets/images/help-desk.svg"
-                 alt="Схема жизненного цикла обращения: новое, в работе, решено">
-            <figcaption>Жизненный цикл обращения Help Desk</figcaption>
-        </figure>
-    </section>
+    <aside class="sidebar">
+      <h2>Мои фильтры</h2>
+
+      <div class="filter-group">
+        <label>Дата</label>
+        <select>
+          <option>На этой неделе</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Формат</label>
+        <label class="checkbox-label"><input type="checkbox" checked> Очно</label>
+        <label class="checkbox-label"><input type="checkbox"> Онлайн</label>
+      </div>
+
+      <div class="filter-group">
+        <label>Уровень</label>
+        <label class="radio-label"><input type="radio" name="level" checked> Для всех</label>
+        <label class="radio-label"><input type="radio" name="level"> Начальный</label>
+        <label class="radio-label"><input type="radio" name="level"> Продвинутый</label>
+      </div>
+
+      <button class="btn-apply">Применить</button>
+    </aside>
+
+  </div>
 </main>
 
-<footer>
-    <p>© 2026 Help Desk. Учебный проект.</p>
-</footer>
 </body>
 </html>
