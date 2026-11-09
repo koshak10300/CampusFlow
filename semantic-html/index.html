@@ -3,265 +3,121 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Практическая № 4 — каталог учебных проектов</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="color-scheme" content="light dark">
+  <title>ATLAS UI Kit — дизайн-система Help Desk</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="js/theme.js" defer></script>
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="#"><span class="brand-icon">◈</span> study<span class="brand-light">/projects</span></a>
-    <nav aria-label="Главное меню">
-      <a href="#projects" class="nav-active">Каталог</a>
-      <a href="#project-info">О проекте</a>
-      <a href="#footer">Контакты</a>
-    </nav>
-    <span class="header-note">Практическая работа № 4</span>
-  </div>
-</header>
-
-<main class="container">
-  <section class="hero">
-    <div>
-      <span class="eyebrow">ВЕБ-РАЗРАБОТКА И ДИЗАЙН · МОДУЛЬ 4</span>
-      <h1>Каталог учебных<br class="desktop-break"> проектов</h1>
-      <p>Изучайте реальные примеры интерфейсов. Сравнивайте технологии, сложность и состав задач.</p>
-    </div>
-    <div class="hero-stat">
-      <strong>08</strong>
-      <span>проектов для практики<br>и самостоятельной работы</span>
-    </div>
-  </section>
-
-  <div class="content-layout">
-    <aside class="filters" aria-label="Фильтры">
-      <div class="sidebar-title">
-        <h2>Фильтры</h2>
-        <span>↗</span>
-      </div>
-      <fieldset>
-        <legend>Тип проекта</legend>
-        <label><input type="checkbox" checked> Все проекты <em>8</em></label>
-        <label><input type="checkbox"> Веб-приложение <em>3</em></label>
-        <label><input type="checkbox"> Интерфейс <em>3</em></label>
-        <label><input type="checkbox"> Аналитика <em>2</em></label>
-      </fieldset>
-      <fieldset>
-        <legend>Сложность</legend>
-        <label><input type="checkbox"> Базовый</label>
-        <label><input type="checkbox"> Средний</label>
-        <label><input type="checkbox"> Сложный</label>
-      </fieldset>
-      <button type="button" class="reset">Сбросить фильтры</button>
-      <div class="aside-tip">
-        <span>ⓘ</span>
-        <p>Карточки должны одинаково выглядеть даже при разной длине описания.</p>
-      </div>
-    </aside>
-
-    <section id="projects" class="projects" aria-labelledby="catalog-title">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">РАЗДЕЛ 01 / КАТАЛОГ</span>
-          <h2 id="catalog-title">Проекты <span class="count">(8)</span></h2>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#main" aria-label="ATLAS UI Kit — к содержимому">
+        <span class="brand__mark" aria-hidden="true">A/</span>
+        <span><strong>ATLAS</strong><small>Interface system / v0.1</small></span>
+      </a>
+      <div class="toolbar" aria-label="Настройки отображения">
+        <div class="toolbar__field">
+          <label for="theme-select">Тема</label>
+          <select id="theme-select" class="select select--toolbar">
+            <option value="auto">Системная</option>
+            <option value="light">Светлая</option>
+            <option value="dark">Тёмная</option>
+          </select>
         </div>
-        <div class="sort">
-          <label for="sort">Сортировка</label>
-          <select id="sort">
-            <option>По названию</option>
-            <option>По сложности</option>
+        <div class="toolbar__field">
+          <label for="density-select">Плотность</label>
+          <select id="density-select" class="select select--toolbar">
+            <option value="normal">Обычная</option>
+            <option value="compact">Компактная</option>
           </select>
         </div>
       </div>
+    </header>
 
-      <div class="cards-grid">
-        <article class="project-card">
-          <img class="project-cover" src="assets/help.svg" alt="Иллюстрация проекта Help Desk">
-          <div class="project-body">
-            <div class="card-top">
-              <span class="badge">Веб-приложение</span>
-              <span class="level">Средний</span>
-            </div>
-            <h3>Help Desk</h3>
-            <p class="project-description">Сервис обработки заявок</p>
-            <p class="tech">Java · Spring Boot</p>
-            <div class="card-bottom">
-              <span>8 задач</span>
-              <span>12 окт 2026</span>
-            </div>
-            <a class="card-link" href="#project-info">Подробнее <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
+    <main id="main" class="main">
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Библиотека интерфейса · Учебный проект</p>
+          <h1 id="page-title">Дизайн-система <span>Help Desk</span></h1>
+          <p class="hero__lead">Один набор токенов управляет цветами, типографикой, отступами, размерами компонентов и двумя темами. Измените тему или плотность и проследите за поведением интерфейса.</p>
+        </div>
+        <div class="hero__aside">
+          <p class="eyebrow">Сборка 01 / CSS + JS</p>
+          <strong>Centralized by design.</strong>
+          <span>Изменение роли — в одном месте, результат — во всех компонентах.</span>
+        </div>
+      </section>
 
-        <article class="project-card">
-          <img class="project-cover" src="assets/tasks.svg" alt="Иллюстрация проекта TaskFlow">
-          <div class="project-body">
-            <div class="card-top">
-              <span class="badge">Интерфейс</span>
-              <span class="level">Базовый</span>
-            </div>
-            <h3>TaskFlow</h3>
-            <p class="project-description">Доска задач команды</p>
-            <p class="tech">React · TypeScript</p>
-            <div class="card-bottom">
-              <span>6 задач</span>
-              <span>16 окт 2026</span>
-            </div>
-            <a class="card-link" href="#project-info">Подробнее <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
+      <section class="section" aria-labelledby="colors-title">
+        <div class="section__heading"><div><p class="section__number">01 — ОСНОВЫ</p><h2 id="colors-title">Цветовые роли</h2></div><p>Семантические имена вместо случайных HEX-значений</p></div>
+        <div class="swatches">
+          <div class="swatch"><span class="swatch__color swatch__color--primary"></span><strong>Primary</strong><code>--color-primary</code></div>
+          <div class="swatch"><span class="swatch__color swatch__color--surface"></span><strong>Surface</strong><code>--color-surface</code></div>
+          <div class="swatch"><span class="swatch__color swatch__color--subtle"></span><strong>Subtle</strong><code>--color-surface-subtle</code></div>
+          <div class="swatch"><span class="swatch__color swatch__color--text"></span><strong>Text</strong><code>--color-text</code></div>
+          <div class="swatch"><span class="swatch__color swatch__color--border"></span><strong>Control border</strong><code>--color-border-control</code></div>
+          <div class="swatch"><span class="swatch__color swatch__color--success"></span><strong>Success</strong><code>--color-success</code></div>
+        </div>
+      </section>
 
-        <article class="project-card">
-          <img class="project-cover" src="assets/eco.svg" alt="Иллюстрация проекта EcoMonitor">
-          <div class="project-body">
-            <div class="card-top">
-              <span class="badge">Аналитика</span>
-              <span class="level">Сложный</span>
-            </div>
-            <h3>EcoMonitor</h3>
-            <p class="project-description">Мониторинг городской среды</p>
-            <p class="tech">Python · FastAPI</p>
-            <div class="card-bottom">
-              <span>10 задач</span>
-              <span>18 окт 2026</span>
-            </div>
-            <a class="card-link" href="#project-info">Подробнее <span aria-hidden="true">↗</span></a>
+      <div class="section-grid">
+        <section class="section section--card" aria-labelledby="type-title">
+          <div class="section__heading"><div><p class="section__number">02 — ОСНОВЫ</p><h2 id="type-title">Типографика</h2></div></div>
+          <div class="type-samples">
+            <div class="type-row"><code>display</code><p class="type-display">Система, а не набор стилей</p></div>
+            <div class="type-row"><code>heading</code><p class="type-heading">Заголовок секции</p></div>
+            <div class="type-row"><code>body</code><p class="type-body">Рабочий текст, который читают каждый день.</p></div>
+            <div class="type-row"><code>small</code><p class="type-small">Вспомогательная информация для интерфейса.</p></div>
           </div>
-        </article>
-
-        <article class="project-card">
-          <img class="project-cover" src="assets/books.svg" alt="Иллюстрация проекта BookSpace">
-          <div class="project-body">
-            <div class="card-top">
-              <span class="badge">Веб-приложение</span>
-              <span class="level">Базовый</span>
-            </div>
-            <h3>BookSpace</h3>
-            <p class="project-description">Каталог электронной библиотеки</p>
-            <p class="tech">HTML · CSS · JS</p>
-            <div class="card-bottom">
-              <span>5 задач</span>
-              <span>21 окт 2026</span>
-            </div>
-            <a class="card-link" href="#project-info">Подробнее <span aria-hidden="true">↗</span></a>
+        </section>
+        <section class="section section--card" aria-labelledby="space-title">
+          <div class="section__heading"><div><p class="section__number">03 — ОСНОВЫ</p><h2 id="space-title">Шкала отступов</h2></div></div>
+          <div class="space-samples">
+            <div class="space-row"><code>4px</code><span style="--bar-width:var(--space-1)"></span></div>
+            <div class="space-row"><code>8px</code><span style="--bar-width:var(--space-2)"></span></div>
+            <div class="space-row"><code>12px</code><span style="--bar-width:var(--space-3)"></span></div>
+            <div class="space-row"><code>16px</code><span style="--bar-width:var(--space-4)"></span></div>
+            <div class="space-row"><code>24px</code><span style="--bar-width:var(--space-6)"></span></div>
+            <div class="space-row"><code>32px</code><span style="--bar-width:var(--space-8)"></span></div>
           </div>
-        </article>
-
-        <article class="project-card">
-          <img class="project-cover" src="assets/finance.svg" alt="Иллюстрация проекта FinTrack">
-          <div class="project-body">
-            <div class="card-top">
-              <span class="badge">Аналитика</span>
-              <span class="level">Средний</span>
-            </div>
-            <h3>FinTrack</h3>
-            <p class="project-description">Личный учёт расходов</p>
-            <p class="tech">Vue · PostgreSQL</p>
-            <div class="card-bottom">
-              <span>7 задач</span>
-              <span>24 окт 2026</span>
-            </div>
-            <a class="card-link" href="#project-info">Подробнее <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <img class="project-cover" src="assets/events.svg" alt="Иллюстрация проекта EventHub">
-          <div class="project-body">
-            <div class="card-top">
-              <span class="badge">Интерфейс</span>
-              <span class="level">Сложный</span>
-            </div>
-            <h3>EventHub</h3>
-            <p class="project-description">Платформа мероприятий</p>
-            <p class="tech">Next.js · Prisma</p>
-            <div class="card-bottom">
-              <span>9 задач</span>
-              <span>27 окт 2026</span>
-            </div>
-            <a class="card-link" href="#project-info">Подробнее <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <img class="project-cover" src="assets/notes.svg" alt="Иллюстрация проекта StudyNotes">
-          <div class="project-body">
-            <div class="card-top">
-              <span class="badge">Веб-приложение</span>
-              <span class="level">Средний</span>
-            </div>
-            <h3>StudyNotes</h3>
-            <p class="project-description">Совместные конспекты</p>
-            <p class="tech">Java · Thymeleaf</p>
-            <div class="card-bottom">
-              <span>8 задач</span>
-              <span>30 окт 2026</span>
-            </div>
-            <a class="card-link" href="#project-info">Подробнее <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <img class="project-cover" src="assets/routes.svg" alt="Иллюстрация проекта CityRoutes">
-          <div class="project-body">
-            <div class="card-top">
-              <span class="badge">Интерфейс</span>
-              <span class="level">Сложный</span>
-            </div>
-            <h3>CityRoutes</h3>
-            <p class="project-description">Планировщик городских маршрутов</p>
-            <p class="tech">JS · OpenStreetMap</p>
-            <div class="card-bottom">
-              <span>11 задач</span>
-              <span>2 ноя 2026</span>
-            </div>
-            <a class="card-link" href="#project-info">Подробнее <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
+        </section>
       </div>
 
-      <div class="pagination">
-        <span>Показано 8 из 8 проектов</span>
-        <button type="button">Все проекты <span aria-hidden="true">→</span></button>
+      <section class="section" aria-labelledby="buttons-title">
+        <div class="section__heading"><div><p class="section__number">04 — КОМПОНЕНТЫ</p><h2 id="buttons-title">Кнопки и состояния</h2></div><p>Hover, active, focus-visible, disabled</p></div>
+        <div class="demo-panel">
+          <div class="button-list">
+            <button class="button button--primary" id="demo-action" type="button">Создать заявку</button>
+            <button class="button button--secondary" type="button">Вторичное действие</button>
+            <button class="button button--ghost" type="button">Без заливки</button>
+            <button class="button button--primary" type="button" disabled>Недоступно</button>
+          </div>
+          <p class="hint" id="demo-feedback" role="status" aria-live="polite">Нажмите первую кнопку для демонстрации обратной связи.</p>
+        </div>
+      </section>
+
+      <div class="section-grid">
+        <section class="section section--card" aria-labelledby="fields-title">
+          <div class="section__heading"><div><p class="section__number">05 — КОМПОНЕНТЫ</p><h2 id="fields-title">Поля ввода</h2></div></div>
+          <form class="form-stack" action="#" onsubmit="return false">
+            <div class="field"><label for="name">Имя пользователя <span aria-hidden="true">*</span></label><input class="input" id="name" name="name" autocomplete="name" placeholder="Например, Алексей" required></div>
+            <div class="field"><label for="email">Электронная почта</label><input class="input" id="email" name="email" type="email" value="wrong-address" aria-invalid="true" aria-describedby="email-error"><span class="field__error" id="email-error">Проверьте формат адреса электронной почты.</span></div>
+            <div class="field"><label for="blocked">Закрытое поле</label><input class="input" id="blocked" value="Недоступно для изменения" disabled></div>
+          </form>
+        </section>
+        <section class="section section--card" aria-labelledby="alerts-title">
+          <div class="section__heading"><div><p class="section__number">06 — КОМПОНЕНТЫ</p><h2 id="alerts-title">Уведомления</h2></div></div>
+          <div class="alert-stack">
+            <div class="alert alert--info" role="status"><span class="alert__symbol" aria-hidden="true">i</span><div><strong>Информация</strong><p>Заявка будет обработана в течение рабочего дня.</p></div></div>
+            <div class="alert alert--success" role="status"><span class="alert__symbol" aria-hidden="true">✓</span><div><strong>Сохранено</strong><p>Изменения успешно применены к проекту.</p></div></div>
+            <div class="alert alert--error" role="alert"><span class="alert__symbol" aria-hidden="true">!</span><div><strong>Ошибка</strong><p>Не удалось отправить форму. Проверьте данные.</p></div></div>
+            <div class="alert alert--warning" role="alert"><span class="alert__symbol" aria-hidden="true">⚠</span><div><strong>Предупреждение</strong><p>Срок ответа скоро истечет. Не откладывайте обработку заявки.</p></div></div>
+          </div>
+        </section>
       </div>
-    </section>
+      <footer class="footer"><span>ATLAS UI Kit · Практика по дизайн-токенам</span><span>HTML / CSS Custom Properties / Vanilla JS</span></footer>
+    </main>
   </div>
-
-  <section class="feature" id="project-info">
-    <div class="feature_inner">
-      <div class="feature-copy">
-        <span class="eyebrow">РАЗДЕЛ 02 / СПЕЦИАЛЬНЫЙ БЛОК</span>
-        <h2>От макета<br>к адаптивной системе</h2>
-        <p>Один интерфейс должен уверенно работать на телефоне, планшете и большом мониторе. Важна не только ширина карточки — меняются расположение, порядок и композиция блоков.</p>
-        <div class="feature-actions">
-          <a href="#projects" class="primary">К каталогу <span>↗</span></a>
-          <a href="#footer" class="secondary">Критерии проверки →</a>
-        </div>
-      </div>
-      <div class="feature-panel">
-        <div class="mini-title">
-          <span>ПРОВЕРКА АДАПТИВНОСТИ</span>
-          <span>01—06</span>
-        </div>
-        <div class="viewport-bars">
-          <span style="--w:18%">320</span>
-          <span style="--w:26%">375</span>
-          <span style="--w:48%">768</span>
-          <span style="--w:64%">1024</span>
-          <span style="--w:88%">1440</span>
-          <span style="--w:100%">1920</span>
-        </div>
-        <p>Шесть контрольных ширин экрана</p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer id="footer">
-  <div class="container footer-inner">
-    <strong>study/projects</strong>
-    <span>Grid · Flexbox · Container Queries</span>
-    <span>Учебный макет · 2026</span>
-  </div>
-</footer>
 </body>
 </html>
